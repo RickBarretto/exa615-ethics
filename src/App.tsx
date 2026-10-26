@@ -126,7 +126,7 @@ function Modal({
   return (
     <dialog
       ref={ref}
-      className="modal [border:1px_solid_#e3dbea] rounded-[22px] p-7 w-[min(560px,calc(100%_-_28px))] max-h-[calc(100dvh_-_40px)] text-[#30283b] bg-paper shadow-[0_20px_100px_#30213c40] max-[651px]:p-[23px_20px]"
+      className="modal fixed inset-0 m-auto overflow-y-auto [border:1px_solid_#e3dbea] rounded-[22px] p-7 w-[min(560px,calc(100%_-_28px))] max-h-[calc(100dvh_-_40px)] text-[#30283b] bg-paper shadow-[0_20px_100px_#30213c40] max-[651px]:p-[23px_20px]"
       onCancel={(e) => {
         e.preventDefault();
         if (!locked) onClose();
