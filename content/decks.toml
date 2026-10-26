@@ -1,0 +1,115 @@
+# ENTRE PARES — todo o conteúdo do jogo fica neste arquivo.
+# Para outro baralho: copie de [[decks]] até o fim dos seus seis pares.
+# IDs únicos, sem espaços. answer = número da resposta (começando em 1).
+# Imagens opcionais: image = "images/minha-carta.webp", alt = "Descrição".
+# Coloque as imagens em public/images/. Use recursos de autoria própria ou licenciados.
+# Não existe editor nem importação de baralhos na interface pública.
+version = 1
+
+[[decks]]
+id = "primeiras-conexoes"
+title = "Primeiras conexões"
+description = "Seis histórias sobre escolhas que fazemos no mundo digital."
+status = "demo" # Troque para "reviewed" após revisão acadêmica.
+
+[[decks.pairs]]
+id = "senha"
+topic = "Segurança digital"
+[decks.pairs.reference]
+title = "O portal da guilda"
+description = "No jogo, um desconhecido promete itens raros em troca da senha de Lia."
+icon = "gamepad"
+[decks.pairs.dilemma]
+title = "Sua senha é só sua"
+description = "Proteger o acesso à conta, mesmo diante de uma oferta tentadora."
+icon = "key"
+[decks.pairs.question]
+prompt = "Alguém oferece uma recompensa e pede sua senha. Qual é a atitude mais segura?"
+options = ["Enviar e trocar a senha depois.", "Não compartilhar a senha e usar os canais oficiais para denunciar a tentativa.", "Pedir que a pessoa prometa não entrar na conta."]
+answer = 2
+explanation = "Senhas são pessoais. Ofertas de recompensas podem ser tentativas de roubar contas. Não compartilhe sua senha; peça ajuda a uma pessoa de confiança e use os canais oficiais."
+
+[[decks.pairs]]
+id = "noticia"
+topic = "Fake news e desinformação"
+[decks.pairs.reference]
+title = "Alerta na cidade"
+description = "O grupo de heróis recebe um vídeo alarmante, mas ninguém sabe de onde veio."
+icon = "message"
+[decks.pairs.dilemma]
+title = "Antes de compartilhar"
+description = "Verificar a origem e o contexto de uma informação que parece urgente."
+icon = "globe"
+[decks.pairs.question]
+prompt = "Um vídeo sem fonte diz que algo grave aconteceu na escola. O que fazer primeiro?"
+options = ["Verificar a data, a origem e os canais oficiais da escola.", "Compartilhar rápido para proteger os colegas.", "Acreditar porque o vídeo tem muitos comentários."]
+answer = 1
+explanation = "Urgência, popularidade e aparência convincente não garantem que uma informação seja verdadeira. Confira a fonte, a data e o contexto antes de compartilhar. Se houver risco imediato, procure uma pessoa responsável."
+
+[[decks.pairs]]
+id = "foto"
+topic = "Privacidade e dados"
+[decks.pairs.reference]
+title = "A foto da equipe"
+description = "Depois da missão, Nina quer publicar uma foto em que todos os amigos aparecem."
+icon = "camera"
+[decks.pairs.dilemma]
+title = "Perguntar faz parte"
+description = "Respeitar a escolha de quem aparece em uma foto antes de publicá-la."
+icon = "eye"
+[decks.pairs.question]
+prompt = "Seu amigo aparece em uma foto que você quer postar. Qual atitude respeita a privacidade dele?"
+options = ["Publicar e apagar apenas se ele reclamar.", "Marcar o perfil dele para avisar depois.", "Perguntar antes e respeitar a decisão de não aparecer."]
+answer = 3
+explanation = "Cada pessoa pode ter motivos para não querer sua imagem publicada. Converse antes e respeite a decisão. Em situações com crianças, a participação de responsáveis também pode ser necessária."
+
+[[decks.pairs]]
+id = "autoria"
+topic = "Direitos autorais"
+[decks.pairs.reference]
+title = "O mapa do artista"
+description = "Caio encontra uma ilustração perfeita para a capa do jogo que está criando."
+icon = "palette"
+[decks.pairs.dilemma]
+title = "Criar e dar crédito"
+description = "Conferir as permissões de uma obra e reconhecer quem a criou."
+icon = "book"
+[decks.pairs.question]
+prompt = "Uma imagem encontrada na internet pode entrar na capa do seu jogo?"
+options = ["Sim, qualquer imagem pública é livre para uso.", "É preciso conferir a licença ou obter permissão, seguindo as condições de uso e crédito.", "Sim, basta remover a assinatura."]
+answer = 2
+explanation = "Estar na internet não significa estar livre para qualquer uso. Confira a licença, obtenha permissão quando necessário e cumpra as condições. Dar crédito, sozinho, não substitui a autorização."
+
+[[decks.pairs]]
+id = "ia"
+topic = "Inteligência artificial"
+[decks.pairs.reference]
+title = "O robô sabe tudo?"
+description = "Um robô ajuda Bia na pesquisa, mas inventa uma informação com muita confiança."
+icon = "bot"
+[decks.pairs.dilemma]
+title = "Uma ajuda, não uma certeza"
+description = "Revisar respostas da inteligência artificial com fontes confiáveis."
+icon = "sparkles"
+[decks.pairs.question]
+prompt = "Uma IA escreveu uma resposta convincente para sua pesquisa. Qual é o próximo passo?"
+options = ["Conferir as informações em fontes confiáveis e seguir as orientações da atividade sobre uso de IA.", "Copiar tudo, porque a IA não erra.", "Usar a resposta apenas se ela for bem longa."]
+answer = 1
+explanation = "Uma IA pode produzir informações erradas ou inventar referências. Confira as afirmações em fontes confiáveis, construa seu entendimento e seja transparente sobre o uso da ferramenta conforme as regras da atividade."
+
+[[decks.pairs]]
+id = "respeito"
+topic = "Convivência digital"
+[decks.pairs.reference]
+title = "Ninguém fica de fora"
+description = "Na partida online, um jogador começa a humilhar alguém da equipe."
+icon = "heart"
+[decks.pairs.dilemma]
+title = "Respeito também online"
+description = "Apoiar quem sofre agressões sem espalhar a violência."
+icon = "shield"
+[decks.pairs.question]
+prompt = "Você presencia uma pessoa sendo humilhada no chat. Como ajudar?"
+options = ["Compartilhar as mensagens para todo mundo rir.", "Insultar o agressor para se vingar.", "Apoiar a pessoa, usar as ferramentas de denúncia e procurar ajuda de alguém de confiança."]
+answer = 3
+explanation = "Acolher a pessoa e denunciar a agressão ajuda sem ampliar a exposição. Evite compartilhar a humilhação ou responder com novas agressões. Procure uma pessoa responsável quando necessário."
