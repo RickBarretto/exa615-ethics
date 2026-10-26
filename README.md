@@ -28,11 +28,16 @@ bun run dev
 Abra o endereço informado pelo Vite, incluindo `/exa615-ethics/`.
 
 ```bash
+bun run lint       # Biome: formatação, imports e lint
+bun run format     # Formatar o código com Biome
+bun run lint:fix   # Aplicar correções seguras do Biome
 bun run test       # Regras do jogo e validação do conteúdo
-bun run check  # TypeScript, TOML, referências de imagens
-bun run build  # Validação + build + service worker
+bun run check      # TypeScript, TOML, referências de imagens
+bun run build      # Validação + build + service worker
 bun run preview
 ```
+
+O Biome usa `biome.json` e reconhece as diretivas do Tailwind em `src/styles.css`. Execute `bun run lint` para verificar formatação, imports e regras de qualidade; `bun run lint:fix` aplica correções seguras e `bun run format` formata os arquivos.
 
 ## Editar cartas e baralhos
 
@@ -78,25 +83,25 @@ url = "https://exemplo.org/referencia"
 
 ### Campos e regras
 
-| Campo | Como preencher |
-| --- | --- |
-| `version` | Versão do formato; mantenha `1` no começo do arquivo. |
-| `decks.id` | Identificador único do baralho. Ex.: `privacidade`. |
-| `decks.title` / `description` | Nome e apresentação exibidos na seleção. |
-| `decks.status` | `demo` durante produção; `reviewed` após revisão acadêmica. |
-| `pairs.id` | Identificador único do par dentro do baralho. |
-| `pairs.topic` | Tema apresentado na pergunta e nos resultados. |
-| `reference` | A carta com a história ou referência cultural. |
-| `dilemma` | A carta com a escolha ou dilema correspondente. |
-| `title` / `description` | Textos curtos, simples e adequados ao público. |
-| `icon` | Ícone usado quando a carta não tem imagem. |
-| `image` | Opcional: caminho relativo a `public/`, começando com `images/`. |
-| `alt` | Obrigatório se houver imagem: descrição alternativa. |
-| `credit` | Crédito e condições de uso da imagem, apresentados na revisão final. |
-| `question.options` | De 2 a 5 alternativas diferentes. |
-| `question.answer` | Número da alternativa correta, **começando em 1**. |
-| `question.explanation` | Explicação educativa apresentada apenas ao final. |
-| `sources` | Lista opcional de fontes HTTPS para aprofundamento. |
+| Campo                         | Como preencher                                                       |
+| ----------------------------- | -------------------------------------------------------------------- |
+| `version`                     | Versão do formato; mantenha `1` no começo do arquivo.                |
+| `decks.id`                    | Identificador único do baralho. Ex.: `privacidade`.                  |
+| `decks.title` / `description` | Nome e apresentação exibidos na seleção.                             |
+| `decks.status`                | `demo` durante produção; `reviewed` após revisão acadêmica.          |
+| `pairs.id`                    | Identificador único do par dentro do baralho.                        |
+| `pairs.topic`                 | Tema apresentado na pergunta e nos resultados.                       |
+| `reference`                   | A carta com a história ou referência cultural.                       |
+| `dilemma`                     | A carta com a escolha ou dilema correspondente.                      |
+| `title` / `description`       | Textos curtos, simples e adequados ao público.                       |
+| `icon`                        | Ícone usado quando a carta não tem imagem.                           |
+| `image`                       | Opcional: caminho relativo a `public/`, começando com `images/`.     |
+| `alt`                         | Obrigatório se houver imagem: descrição alternativa.                 |
+| `credit`                      | Crédito e condições de uso da imagem, apresentados na revisão final. |
+| `question.options`            | De 2 a 5 alternativas diferentes.                                    |
+| `question.answer`             | Número da alternativa correta, **começando em 1**.                   |
+| `question.explanation`        | Explicação educativa apresentada apenas ao final.                    |
+| `sources`                     | Lista opcional de fontes HTTPS para aprofundamento.                  |
 
 Ícones disponíveis: `shield`, `key`, `sparkles`, `eye`, `message`, `palette`, `gamepad`, `bot`, `camera`, `globe`, `book`, `heart`.
 
@@ -134,7 +139,7 @@ Para verificar offline: faça `bun run build`, use `bun run preview`, abra o jog
 
 ## Arquitetura
 
-React + TypeScript + Vite, com CSS responsivo, `smol-toml` para leitura, Zod para validação e `vite-plugin-pwa`/Workbox para offline. Lucide fornece os ícones. O projeto não tem backend, banco, autenticação, editor público ou analytics.
+React + TypeScript + Vite, com Tailwind CSS 4 para estilos responsivos, `smol-toml` para leitura, Zod para validação e `vite-plugin-pwa`/Workbox para offline. Lucide fornece os ícones. O projeto não tem backend, banco, autenticação, editor público ou analytics.
 
 ```text
 content/decks.toml            # Fonte única de todos os baralhos
@@ -143,9 +148,10 @@ src/content.ts               # Modelo e validação editorial
 src/engine.ts                # Regras puras e embaralhamento Fisher–Yates
 src/engine.test.ts            # Testes de regras e conteúdo
 src/App.tsx                  # Início, tabuleiro, perguntas e resultados
-src/styles.css               # Identidade visual e layout responsivo
+src/styles.css               # Tema Tailwind e regras compartilhadas
+biome.json                   # Formatação e lint
 scripts/validate-content.ts  # Verificação de conteúdo e imagens no build
-.github/workflows/pages.yml # Testes e publicação
+.github/workflows/pages.yml  # Lint, testes e publicação
 ```
 
 A configuração original propunha virar cartas automaticamente após um intervalo. Esta implementação exige **Continuar** após um erro de associação para oferecer tempo de leitura suficiente. Não há penalização adicional.
@@ -156,6 +162,6 @@ O estado da partida existe apenas na memória da página e é perdido ao fechar 
 
 ## Contribuições e licença
 
-Contribuições são bem-vindas por issues e pull requests. Execute `bun run test` e `bun run build` antes de enviar uma alteração. Faça revisão acadêmica das mudanças de conteúdo.
+Contribuições são bem-vindas por issues e pull requests. Execute `bun run lint`, `bun run test` e `bun run build` antes de enviar uma alteração. Faça revisão acadêmica das mudanças de conteúdo.
 
 Código, textos demonstrativos e ícone original deste projeto: [MIT](LICENSE). Ícones: [Lucide](https://lucide.dev/license), licença ISC. Dependências mantêm suas próprias licenças. Recursos de terceiros adicionados posteriormente devem ter suas licenças e créditos documentados separadamente; a MIT do código não concede direitos sobre obras externas.
