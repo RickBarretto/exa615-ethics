@@ -61,7 +61,7 @@ function Art({ type, className = "" }: { type: string; className?: string }) {
 function Illustration() {
   return (
     <div
-      className="illustration h-85 relative isolate max-[651px]:h-[285px] max-[651px]:[transform:scale(.82)] max-[651px]:[transform-origin:center_center] max-[651px]:ml-[-25px] max-[651px]:w-90 max-[651px]:max-w-full max-[651px]:[margin:5px_auto_-5px] min-[651px]:max-[901px]:[transform:scale(.8)] min-[651px]:max-[901px]:[transform-origin:center_center] min-[651px]:max-[901px]:ml-[-25px] min-[1300px]:max-w-110 min-[1300px]:ml-5"
+      className="illustration select-none h-85 relative isolate max-[651px]:h-[285px] max-[651px]:[transform:scale(.82)] max-[651px]:[transform-origin:center_center] max-[651px]:ml-[-25px] max-[651px]:w-90 max-[651px]:max-w-full max-[651px]:[margin:5px_auto_-5px] min-[651px]:max-[901px]:[transform:scale(.8)] min-[651px]:max-[901px]:[transform-origin:center_center] min-[651px]:max-[901px]:ml-[-25px] min-[1300px]:max-w-110 min-[1300px]:ml-5"
       aria-hidden="true"
     >
       <span className="orbit orbit-one absolute inset-[14px_10px] [border:1px_dashed_#ddd5ea] rounded-full [transform:rotate(-20deg)] max-[651px]:inset-[8px_-8px]" />
@@ -186,7 +186,7 @@ function Question({
               checked={selected === i + 1}
               onChange={() => setSelected(i + 1)}
             />
-            <span className="letter bg-[#eee7f5] w-[25px] h-[25px] grid place-items-center rounded-[6px] text-[#80649c] text-[0.875rem] font-bold shrink-0 max-[651px]:hidden">
+            <span className="letter select-none bg-[#eee7f5] w-[25px] h-[25px] grid place-items-center rounded-[6px] text-[#80649c] text-[0.875rem] font-bold shrink-0 max-[651px]:hidden">
               {String.fromCharCode(65 + i)}
             </span>
             <span>{option}</span>
@@ -294,7 +294,7 @@ function Game({
           <CircleHelp size={18} /> Como jogar
         </button>
       </div>
-      <div className="scorebar flex gap-6 items-center bg-[#fff] [border:1px_solid_var(--line)] p-[15px_23px] rounded-[14px] flex-wrap max-[651px]:gap-4 max-[651px]:p-[16px_12px]">
+      <div className="scorebar select-none flex gap-6 items-center bg-[#fff] [border:1px_solid_var(--line)] p-[15px_23px] rounded-[14px] flex-wrap max-[651px]:gap-4 max-[651px]:p-[16px_12px]">
         <div>
           <Layers2 />
           <span>
@@ -663,7 +663,7 @@ export default function App() {
                       onChange={() => setDeckId(d.id)}
                     />
                     <div
-                      className={`deck-art deck-art- relative bg-[#eee8f7] overflow-hidden flex items-center justify-center min-h-54.5 max-[651px]:min-h-47.5${index % 3}`}
+                      className={`deck-art select-none deck-art-${index % 3} relative bg-[#eee8f7] overflow-hidden flex items-center justify-center min-h-54.5 max-[651px]:min-h-47.5`}
                       aria-hidden="true"
                     >
                       <div className="deck-tile absolute bg-[#fffaf5] w-22.5 h-[121px] flex items-center justify-center flex-col gap-3.5 rounded-[12px] shadow-[0_8px_9px_#765c9d12] [border:4px_solid_#fff] [transform:rotate(-15deg)] left-7 top-9 text-[#7a57b4] max-[360px]:w-17.5 max-[360px]:h-25 max-[360px]:left-[calc(50%_-_70px)] max-[360px]:top-6 min-[360px]:max-[651px]:left-[calc(50%_-_70px)] min-[360px]:max-[651px]:top-6 min-[651px]:max-[901px]:left-[5px]">
@@ -742,7 +742,7 @@ export default function App() {
             </div>
             <div className="how-grid grid grid-cols-[repeat(3,1fr)] gap-14.5 mt-7 max-[651px]:grid-cols-[1fr] max-[651px]:gap-6 max-[651px]:mt-[27px] min-[651px]:max-[901px]:gap-6">
               <article>
-                <span className="step-number lavender w-8 h-8 grid place-items-center rounded-[10px] text-[0.875rem] font-[750] [transform:rotate(-5deg)] max-[651px]:absolute max-[651px]:left-0 max-[651px]:top-0">
+                <span className="step-number select-none lavender w-8 h-8 grid place-items-center rounded-[10px] text-[0.875rem] font-[750] [transform:rotate(-5deg)] max-[651px]:absolute max-[651px]:left-0 max-[651px]:top-0">
                   01
                 </span>
                 <h3>Conectem as cartas</h3>
@@ -752,7 +752,7 @@ export default function App() {
                 </p>
               </article>
               <article>
-                <span className="step-number peach w-8 h-8 grid place-items-center rounded-[10px] text-[0.875rem] font-[750] [transform:rotate(-5deg)] max-[651px]:absolute max-[651px]:left-0 max-[651px]:top-0">
+                <span className="step-number select-none peach w-8 h-8 grid place-items-center rounded-[10px] text-[0.875rem] font-[750] [transform:rotate(-5deg)] max-[651px]:absolute max-[651px]:left-0 max-[651px]:top-0">
                   02
                 </span>
                 <h3>Compartilhem ideias</h3>
@@ -762,7 +762,7 @@ export default function App() {
                 </p>
               </article>
               <article>
-                <span className="step-number mint w-8 h-8 grid place-items-center rounded-[10px] text-[0.875rem] font-[750] [transform:rotate(-5deg)] max-[651px]:absolute max-[651px]:left-0 max-[651px]:top-0">
+                <span className="step-number select-none mint w-8 h-8 grid place-items-center rounded-[10px] text-[0.875rem] font-[750] [transform:rotate(-5deg)] max-[651px]:absolute max-[651px]:left-0 max-[651px]:top-0">
                   03
                 </span>
                 <h3>Levem o aprendizado</h3>
@@ -840,7 +840,7 @@ export default function App() {
               Acertar é bom. Entender o porquê é ainda melhor.
             </p>
           </div>
-          <div className="review-list grid gap-[15px]">
+          <div className="review-list select-text grid gap-[15px]">
             {deck.pairs.map((pair, i) => {
               const answer = result.state.answers[pair.id];
               const ok = answer === pair.question.answer;

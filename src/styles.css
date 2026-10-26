@@ -24,7 +24,7 @@
     @apply box-border;
   }
   body {
-    @apply m-0;
+    @apply m-0 select-none;
   }
   button,
   input,
@@ -36,7 +36,10 @@
     @apply touch-manipulation;
   }
   button {
-    @apply [font:inherit] cursor-pointer;
+    @apply [font:inherit] cursor-pointer select-none;
+  }
+  a.button {
+    @apply select-none;
   }
   button:disabled {
     @apply cursor-default;
