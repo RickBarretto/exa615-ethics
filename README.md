@@ -18,20 +18,20 @@ Use toque, mouse ou Tab + Enter/Espaço. O conteúdo de cartas ocultas também f
 
 ## Rodar localmente
 
-Requer Node.js 22.12+ e npm.
+Requer Bun 1.3.12+ e Node.js 22.12+ para as ferramentas de build.
 
 ```bash
-npm ci
-npm run dev
+bun install --frozen-lockfile
+bun run dev
 ```
 
 Abra o endereço informado pelo Vite, incluindo `/exa615-ethics/`.
 
 ```bash
-npm test       # Regras do jogo e validação do conteúdo
-npm run check  # TypeScript, TOML, referências de imagens
-npm run build  # Validação + build + service worker
-npm run preview
+bun run test       # Regras do jogo e validação do conteúdo
+bun run check  # TypeScript, TOML, referências de imagens
+bun run build  # Validação + build + service worker
+bun run preview
 ```
 
 ## Editar cartas e baralhos
@@ -130,7 +130,7 @@ O service worker é gerado no build e armazena os arquivos do aplicativo, conte�
 
 Quando houver uma atualização, o aplicativo avisa e oferece **Atualizar** fora da partida. Durante uma partida, o botão fica indisponível para evitar a perda do progresso. A pessoa precisa conectar novamente para receber conteúdo atualizado. O cache é uma cópia pública do conteúdo; não inclua segredos no TOML.
 
-Para verificar offline: faça `npm run build`, use `npm run preview`, abra o jogo, aguarde o aviso, ative o modo offline nas ferramentas do navegador, recarregue e conclua uma partida. O modo de desenvolvimento não registra o service worker.
+Para verificar offline: faça `bun run build`, use `bun run preview`, abra o jogo, aguarde o aviso, ative o modo offline nas ferramentas do navegador, recarregue e conclua uma partida. O modo de desenvolvimento não registra o service worker.
 
 ## Arquitetura
 
@@ -156,6 +156,6 @@ O estado da partida existe apenas na memória da página e é perdido ao fechar 
 
 ## Contribuições e licença
 
-Contribuições são bem-vindas por issues e pull requests. Execute `npm test` e `npm run build` antes de enviar uma alteração. Faça revisão acadêmica das mudanças de conteúdo.
+Contribuições são bem-vindas por issues e pull requests. Execute `bun run test` e `bun run build` antes de enviar uma alteração. Faça revisão acadêmica das mudanças de conteúdo.
 
 Código, textos demonstrativos e ícone original deste projeto: [MIT](LICENSE). Ícones: [Lucide](https://lucide.dev/license), licença ISC. Dependências mantêm suas próprias licenças. Recursos de terceiros adicionados posteriormente devem ter suas licenças e créditos documentados separadamente; a MIT do código não concede direitos sobre obras externas.
